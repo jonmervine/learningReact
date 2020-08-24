@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
+import Library from './index2.js';
 
 function Food({name}) {
     return (
@@ -67,11 +68,21 @@ function App({want}) {
             {consume}
             <Checkbox/>
             <GitHubUser login={"jonmervine"}/>
+
+            <Library books={bookList}/>
         </>
-    );
+
+);
 }
 
+let bookList = [
+    {"title": "Hunger", "author": "Roxane Gay", "pages": 320},
+    {"title": "The Sun Also Rises", "author": "Ernest Hemingway", "pages": 260},
+    {"title": "White Teeth", "author": "Zadie Smith", "pages": 480},
+    {"title": "Cat's Cardle", "author": "Kurt Vonnegut", "pages": 304},
+]
+
 ReactDOM.render(
-    <App want={"drinks"}/>,
+        <App want={"drinks"}/>,
     document.getElementById('root')
 );
